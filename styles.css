@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 /* Base font size for rem calculations */
 html {
@@ -17,7 +18,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "header header"
-        "image text";
+        "image content";
     gap: 1.25rem;
     align-items: start;
     background-color: #F0DFCD;
@@ -25,9 +26,12 @@ body {
 }
 
 h1 {
-    font-family: 'Merriweather', serif;
-    margin-bottom: 1.25rem;
+    font-family: 'Crimson Text', serif;
+    margin-bottom: -10rem;
+    margin-top: -5rem;
     grid-area: header;
+    font-size: 20rem;
+    opacity: 0.1;
 }
 
 #albumen {
@@ -36,22 +40,71 @@ h1 {
     height: auto;
 }
 
-p {
-    grid-area: text;
-    font-size: 2rem;
+.content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
 }
 
+p {
+    font-size: 2rem;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+a:link {
+    color: rgb(59, 59, 133);
+}
+
+a:active {
+    color: darkred;
+}
+
+a:visited {
+    color: rgb(59, 59, 133);
+}
+
+header {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+
+}
+
+
 /* Responsive design */
-@media (max-width: 48rem) {
+@media (max-width: 668px) {
     body {
         grid-template-columns: 1fr;
         grid-template-areas:
             "header"
             "image"
-            "text";
+            "content";
     }
+
+    body {
+        padding: 0;
+    }
+
+h1 {
+width: 0%;
+font-size: 4rem;
+margin: 1rem;
+margin-bottom: -2rem;
+margin-left: .4rem;
 }
 
+p {
+    width: 80%;
+}
+
+img {
+    width: 80%;
+    height: auto;
+}
+}
 /* Font classes */
 .fredoka-lucia {
     font-family: "Fredoka", sans-serif;
@@ -106,5 +159,41 @@ p {
 .merriweather-black-italic {
     font-family: "Merriweather", serif;
     font-weight: 900;
+    font-style: italic;
+}
+
+.crimson-regular {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.crimson-semibold {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.crimson-bold {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.crimson-regular-italic {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.crimson-semibold-italic {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.crimson-bold-italic {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
     font-style: italic;
 }
